@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Тема: Тепло (default) ─── */
+:root,
+[data-theme="teplo"] {
+  --color-bg:             #F5F0E8;
+  --color-surface:        #FFFFFF;
+  --color-border:         #E5DDD0;
+  --color-primary:        #C0392B;
+  --color-primary-hover:  #A93226;
+  --color-secondary:      #E8D5C4;
+  --color-accent:         #D4A96A;
+  --color-text-main:      #2C1A0E;
+  --color-text-muted:     #8B6E5A;
+  --color-text-on-primary:#FFFFFF;
+  --color-success:        #4CAF50;
+  --color-danger:         #E53E3E;
+  --color-timer-bg:       #FFF8F0;
+}
+
+/* ─── Тема: Лаванда ─── */
+[data-theme="lavanda"] {
+  --color-bg:             #F4F1F8;
+  --color-surface:        #FFFFFF;
+  --color-border:         #DDD6ED;
+  --color-primary:        #7C5CBF;
+  --color-primary-hover:  #6A4DAD;
+  --color-secondary:      #EDE8F7;
+  --color-accent:         #B39DDB;
+  --color-text-main:      #2D1B69;
+  --color-text-muted:     #7B6FA0;
+  --color-text-on-primary:#FFFFFF;
+  --color-success:        #4CAF50;
+  --color-danger:         #E53E3E;
+  --color-timer-bg:       #F9F7FC;
+}
+
+/* ─── Тема: Лес ─── */
+[data-theme="les"] {
+  --color-bg:             #F0F4EF;
+  --color-surface:        #FFFFFF;
+  --color-border:         #D4E0D0;
+  --color-primary:        #3A7D44;
+  --color-primary-hover:  #2F6838;
+  --color-secondary:      #DFF0DC;
+  --color-accent:         #8FBC8B;
+  --color-text-main:      #1A2E1C;
+  --color-text-muted:     #5C7A5E;
+  --color-text-on-primary:#FFFFFF;
+  --color-success:        #4CAF50;
+  --color-danger:         #E53E3E;
+  --color-timer-bg:       #F4F9F4;
+}
+
+/* ─── Тема: Hearthside (тёмно-красная) ─── */
+[data-theme="hearthside"] {
+  --color-bg:             #F7F0EE;
+  --color-surface:        #FFFFFF;
+  --color-border:         #EDDFDB;
+  --color-primary:        #9B2335;
+  --color-primary-hover:  #841E2D;
+  --color-secondary:      #F5E6E3;
+  --color-accent:         #C4785A;
+  --color-text-main:      #2C1008;
+  --color-text-muted:     #8B5A4A;
+  --color-text-on-primary:#FFFFFF;
+  --color-success:        #4CAF50;
+  --color-danger:         #E53E3E;
+  --color-timer-bg:       #FDF6F5;
+}
+
+/* ─── Тема: Amber & Oak (золотая тёмная) ─── */
+[data-theme="amber"] {
+  --color-bg:             #1C1A14;
+  --color-surface:        #2A2820;
+  --color-border:         #3D3A2E;
+  --color-primary:        #D4A017;
+  --color-primary-hover:  #B8880E;
+  --color-secondary:      #333020;
+  --color-accent:         #C8860A;
+  --color-text-main:      #F5EDD8;
+  --color-text-muted:     #9A8E6E;
+  --color-text-on-primary:#1C1A14;
+  --color-success:        #6FCF97;
+  --color-danger:         #EB5757;
+  --color-timer-bg:       #252318;
+}
+
+/* ─── Base styles ─── */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* ─── Utility classes ─── */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 rounded-xl font-semibold text-sm transition-colors;
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-xl font-semibold text-sm transition-colors border;
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+    color: var(--color-text-main);
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-secondary);
+  }
+
+  .card {
+    @apply rounded-2xl p-4;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  .input {
+    @apply w-full rounded-xl px-3 py-2 text-sm outline-none transition-colors;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-main);
+  }
+  .input:focus {
+    border-color: var(--color-primary);
+  }
+  .input::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .tab-pill {
+    @apply px-4 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap;
+    color: var(--color-text-muted);
+  }
+  .tab-pill:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text-main);
+  }
+  .tab-pill.active {
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold;
+  }
+}
+
+/* ─── Timer pulse animation ─── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.pulse-dot {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}

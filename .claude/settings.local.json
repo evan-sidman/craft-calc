@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:stitch.withgoogle.com)",
+      "Bash(npm create:*)",
+      "Bash(npx create-vite@latest . --template react)",
+      "Bash(npx create-vite@latest . --template react -- --force)",
+      "Bash(npm install:*)",
+      "Bash(supabase --version)",
+      "Bash(npx supabase:*)",
+      "Bash(SUPABASE_ACCESS_TOKEN=sbp_5cc5a45eabc373d62a0db33df7beb88eb46ea431 npx supabase link --project-ref wgvxnsnynavmwnfbfuwd)",
+      "Bash(SUPABASE_ACCESS_TOKEN=sbp_5cc5a45eabc373d62a0db33df7beb88eb46ea431 npx supabase db execute --file supabase_schema.sql)",
+      "Bash(SUPABASE_ACCESS_TOKEN=sbp_5cc5a45eabc373d62a0db33df7beb88eb46ea431 npx supabase db query --linked -f supabase_schema.sql)",
+      "Bash(curl -s -X POST \"https://api.supabase.com/v1/projects/wgvxnsnynavmwnfbfuwd/storage/buckets\" -H \"Authorization: Bearer sbp_5cc5a45eabc373d62a0db33df7beb88eb46ea431\" -H \"Content-Type: application/json\" -d '{\"\"id\"\": \"\"project-photos\"\", \"\"name\"\": \"\"project-photos\"\", \"\"public\"\": true}')",
+      "Bash(curl -s -X POST \"https://wgvxnsnynavmwnfbfuwd.supabase.co/storage/v1/bucket\" -H \"apikey: sbp_5cc5a45eabc373d62a0db33df7beb88eb46ea431\" -H \"Authorization: Bearer sbp_5cc5a45eabc373d62a0db33df7beb88eb46ea431\" -H \"Content-Type: application/json\" -d '{\"\"id\"\": \"\"project-photos\"\", \"\"name\"\": \"\"project-photos\"\", \"\"public\"\": true}')",
+      "Bash(SUPABASE_ACCESS_TOKEN=sbp_5cc5a45eabc373d62a0db33df7beb88eb46ea431 npx supabase db query --linked -f create_bucket.sql)",
+      "Bash(npm run:*)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
